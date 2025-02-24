@@ -1,0 +1,46 @@
+.container {
+  width: 100%;
+  height: 50px;
+  background-color: #882efe;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0% 10%;
+}
+.listItem {
+  color: #e7e0f6;
+  list-style: none;
+  font-size: 800;
+  cursor: pointer;
+}
+.navList {
+  height: 100%;
+  margin-left: 20%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.header {
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .container {
+    padding-top: 30px;
+  }
+  .listItem {
+    font-size: 14px;
+  }
+  .navList {
+    height: 100%;
+    margin-left: 10%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+  .header {
+    font-size: 1.5rem;
+    line-height: 100%;
+  }
+}

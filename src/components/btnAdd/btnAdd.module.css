@@ -1,0 +1,15 @@
+.container {
+  width: 80px;
+  height: 30px;
+  background: #e46692;
+  border-radius: 20px;
+  border: none;
+  color: #ffffff;
+font-size: 14px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .container {
+    font-size: 12px;
+  }
+}

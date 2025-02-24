@@ -1,0 +1,25 @@
+.container {
+  background: linear-gradient(to bottom, #c59afb, #9d6ee5);
+  height: 95vh;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+}
+.header {
+  color: #ffffff;
+  margin-bottom: 5rem;
+}
+.sibeBarItem {
+  list-style: disc;
+  color: #ffffff;
+  font-weight: 800;
+  cursor: pointer;
+  margin-bottom: 1.75rem;
+}
+@media (max-width: 768px) {
+  .container {
+    display: none;
+  }
+}

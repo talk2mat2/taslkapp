@@ -1,0 +1,90 @@
+/* .container {
+  width: 100%;
+}
+.rowItenms {
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  justify-content: center;
+  
+}
+.bodyItems {
+  flex-grow:1;
+  float: 1;
+  height: 70px;
+  text-align: left;
+  padding: 4px;
+  cursor: pointer;
+  width: 30px;
+
+}
+.bodyItems p {
+  color: #7e7c7c;
+  font-size: 10px;
+  font-weight: 600;
+  text-align:left;
+  border: 1px solid red;
+  height: 100%;
+}
+.dot{
+  margin-right: 10px;
+} */
+.dot{
+  margin-right: 10px;
+} 
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+.responsiveTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; 
+}
+
+.responsiveTable th {
+  color: #000000;
+  padding: 10px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.responsiveTable td {
+  padding: 8px;
+  color: #807d7d;
+  border-bottom: 1px solid #ddd;
+  line-height: 120%;
+  font-size: 14px;
+}
+
+.icon{
+  height: 10px;
+  max-width: 9px;
+}
+.icon2{
+  height: 8px;
+  max-width: 9px;
+}
+.iconBtn{
+ border: none;
+ margin-right: 8px;
+ cursor: pointer;
+}
+
+.responsiveTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+@media screen and (max-width: 768px) {
+  .responsiveTable th,
+  .responsiveTable td {
+    font-size: 14px;
+    padding: 6px; 
+  }
+}
