@@ -1,7 +1,7 @@
 import { ITask } from "../../interface";
 import Circle from "../circle";
 import styles from "./tablleBody.module.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Delete from "../../assets/trash.png";
 import Edit from "../../assets/pencil.png";
 import { useTaskList } from "../../hooks/useTaskList";
@@ -13,10 +13,67 @@ interface Props {
 
 const Table: React.FC<Props> = ({ data }) => {
   const { deleteTask } = useTaskList();
+  const [toShow, setToShow] = useState(data);
   const navigate = useNavigate();
+  const [filter, setFilter] = useState<Partial<ITask>>({
+    status: undefined,
+    priority: undefined,
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    setFilter({ ...filter, [e.target.name]: e.target.value });
+  };
+  useEffect(() => {
+    setToShow(
+      data.filter((item) =>
+        Object.entries(filter).every(
+          ([key, value]) => !value || item[key as keyof ITask] === value
+        )
+      )
+    );
+  }, [filter, data]);
+
   return (
     <div className={styles.tableWrapper}>
-      {!data?.length ? (
+      <div className={styles.filterRow}>
+        <div>
+          <p>Status</p>
+          <form>
+            <select
+              className={styles.formInput}
+              name="status"
+              value={filter.status}
+              onChange={handleChange}
+            >
+              <option value="">None</option>
+              <option value="to-do">To-Do</option>
+              <option value="in-progress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
+          </form>
+        </div>
+        <div>
+          <p>Priority</p>
+          <form>
+            <select
+              className={styles.formInput}
+              name="priority"
+              value={filter.priority}
+              onChange={handleChange}
+            >
+              <option value="">--</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      {!toShow?.length ? (
         <p>no data yet</p>
       ) : (
         <table className={styles.responsiveTable}>
@@ -31,7 +88,7 @@ const Table: React.FC<Props> = ({ data }) => {
             </tr>
           </thead>
           <tbody>
-            {data.map((item, index) => (
+            {toShow.map((item, index) => (
               <>
                 <tr key={index}>
                   <td
