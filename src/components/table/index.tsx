@@ -1,6 +1,5 @@
 import { useTaskList } from "../../hooks/useTaskList";
 import { ITask } from "../../interface";
-import { mockTasks } from "../../mockData";
 import TablleBody from "../tablleBody";
 import styles from "./table.module.css";
 
