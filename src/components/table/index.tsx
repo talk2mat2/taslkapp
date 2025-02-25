@@ -1,3 +1,4 @@
+import { useTaskList } from "../../hooks/useTaskList";
 import { ITask } from "../../interface";
 import { mockTasks } from "../../mockData";
 import TablleBody from "../tablleBody";
@@ -7,11 +8,12 @@ interface props {
   title?: string;
   data?: ITask[];
 }
-const Table = ({ title = ""}: props) => {
+const Table = ({ title = "" }: props) => {
+  const { tasksList } = useTaskList();
   return (
     <div className={styles.container}>
       <h4 className={styles.header}>{title}</h4>
-      <div>{<TablleBody data={mockTasks} />}</div>
+      <div>{<TablleBody data={tasksList} />}</div>
     </div>
   );
 };

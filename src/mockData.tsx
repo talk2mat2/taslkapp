@@ -6,6 +6,7 @@ export const mockTasks: ITask[] = [
     dueDate: new Date("2025-03-01"),
     priority: "high",
     status: "to-do",
+    id: "1",
   },
   {
     title: "Fix authentication bug",
@@ -13,6 +14,7 @@ export const mockTasks: ITask[] = [
     dueDate: new Date("2025-02-28"),
     priority: "medium",
     status: "in-progress",
+    id: "2",
   },
   {
     title: "Refactor dashboard component",
@@ -20,6 +22,7 @@ export const mockTasks: ITask[] = [
     dueDate: new Date("2025-03-05"),
     priority: "low",
     status: "to-do",
+    id: "3",
   },
   {
     title: "Deploy new release",
@@ -27,6 +30,7 @@ export const mockTasks: ITask[] = [
     dueDate: new Date("2025-03-02"),
     priority: "high",
     status: "done",
+    id: "4",
   },
   {
     title: "Schedule team meeting",
@@ -34,5 +38,6 @@ export const mockTasks: ITask[] = [
     dueDate: new Date("2025-02-27"),
     priority: "medium",
     status: "to-do",
+    id: "5",
   },
 ];
