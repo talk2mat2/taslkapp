@@ -39,4 +39,8 @@ open your browser to this link
 http://localhost:5173
 ```
 
+### 2. Runing test
+to run test cases,
+simpley run "yarn test"
+
 
